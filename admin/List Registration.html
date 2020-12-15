@@ -1,0 +1,367 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<?php
+session_start();
+error_reporting(0);
+?>
+<head >
+    <title>E-RTO System</title>
+<script type="text/javascript">
+function myans()
+{
+if(!ans.match(/^[a-zA-Z0-9\s\,\''\-]*$/))
+{  
+document.getElementById("msg").innerHTML="**Answer should be in characters ";
+return false;
+}
+}
+
+function myid()
+{
+var rid=document.f1.rid.value;
+if(!rid.match(/^[0-9]+$/))
+{  
+document.getElementById("msg").innerHTML="**id should be in numbers";
+return false;
+}
+}
+function myaname()
+{
+var aname=document.f1.aname.value;
+if(!aname.match(/^[A-Za-z]+$/))
+{  
+document.getElementById("msg").innerHTML="**username should be in characters ";
+return false;
+}
+}
+function mypass()
+{
+var pass=document.f1.pass.value;
+var min=6;
+var max=16;
+var exp=/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+alert(pass);
+if(pass.length<min||pass.length>max){
+return false;
+}
+if(!exp.test(pass))
+{
+document.getElementById("msg").innerHTML="**Password should contain atleast one number and !@ # $ % ^ & *";
+return false;
+}
+}
+
+function myfname()
+{
+var fname=document.f1.fname.value;
+if(!fname.match(/^[A-Za-z]+$/))
+{  
+document.getElementById("msg").innerHTML="**firstname should be in characters ";
+return false;
+}
+
+}
+
+function mylname()
+{
+var lname=document.f1.lname.value;
+if(!lname.match(/^[A-Za-z]+$/))
+{  
+document.getElementById("msg").innerHTML="**lastname should be in characters ";
+return false;
+}
+
+}
+
+function myadd()
+{
+var add=document.f1.add.value;
+if(!add.match(/^[a-zA-Z0-9\s\,\''\-]*$/))
+{  
+document.getElementById("msg").innerHTML="**Address should be in characters";
+return false;
+}
+}
+
+function mycity()
+{
+var city=document.f1.city.value;
+if(!city.match(/^[a-zA-Z0-9\s\,\''\-]*$/))
+{  
+document.getElementById("msg").innerHTML="**city should be in characters";
+return false;
+}
+}
+
+function myno()
+{
+var no=document.f1.no.value;
+if(!no.match(/^\d{10}$/))
+{  
+document.getElementById("msg").innerHTML="**mobile no should be in numbers and 10digit ";
+return false;
+}
+}
+
+function myfun()
+{
+var rid=document.f1.rid.value;
+var aname=document.f1.aname.value;
+var pass=document.f1.pass.value;
+var fname=document.f1.fname.value;
+var lname=document.f1.lname.value;
+var add=document.f1.add.value;
+var city=document.f1.city.value;
+var no=document.f1.no.value;
+var email=document.f1.email.value;
+var sq=document.f1.squestion.value;
+var ans=document.f1.sanswer.value;
+var status=document.f1.status.value;
+
+if(rid==""||aname==""||pass==""||fname==""||lname==""||add==""||city==""||no==""||email==""||sq==""||ans==""||status=="")
+{  
+document.getElementById("msg").innerHTML="**Please fill all the details";
+return false;
+}
+
+}
+
+</script>
+
+    </head>
+<body >
+    <form id="form1" action="" method="post" name="f1" >
+
+<center>
+    <div>
+        <table style="width: 990px" border="1px">
+            <tr>
+                <td style="width: 990; height: 150px" colspan="2">
+                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+                        width="990" height="150">
+                        <param name="movie" value="flash1.swf" />
+                        <param name="quality" value="high" />
+                        <param name="wmode" value="transparent">
+                        <embed src="flash1.swf" quality="high" type="application/x-shockwave-flash" wmode="transparent"
+                            width="990" height="150" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                    </object>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 30px" >
+                    &nbsp;
+                    
+                </td>
+                <td style="height: 30px" >
+                    <?php 
+            echo"<h2>Welcome &nbsp;   ".$_SESSION['aname']."</h2>";
+               ?></td>
+                
+            </tr>
+            <tr>
+                <td style="width: 200px; height: 400px" valign="top">
+                    <center>
+                        <h3>
+                            :: Menu ::</h3>
+                    </center>
+                    <ul>
+                        <li><a href="List_Admin_Master.html">Admin Info</a></li>
+                        <li><a href="List Registration.html">Registration</a></li>
+                        <li><a href="rto.html">RTO Test</a></li>
+                        <li><a href="List Contact_Us.html">Contact_Us Info</a></li>
+                        <li><a href="List Feedback.html">Feedback</a></li>
+                
+                    </ul>
+                </td>
+                <td style="width: 790px; height: 400px" valign="top">
+                <center>
+    <table>
+        <tr>
+            <td colspan="3" align="center">
+                <h2>Registration</h2></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                &nbsp;<center><span id="msg" style="color:red"></span></center></td>
+        </tr>
+        <tr>
+            <td>
+                Regi Id :</td>
+            <td>
+               <input type="text" name="rid" onchange="return myid()">
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                AdminName :</td>
+            <td>
+                <input type="text" name="aname" onchange="return myaname()">
+            </td>
+        </tr>
+        <tr>
+            <td>Password :
+                </td>
+            <td style="margin-left: 40px">
+             <input type="password" name="pass" onchange="return mypass()">
+              </td>
+        </tr>
+        <tr>
+            <td>First Name :</td>
+            <td>
+                <input type="text" name="fname" onchange="return myfname()">
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name :</td>
+            <td>
+               <input type="text" name="lname" onchange="return mylname()">
+            </td>  
+        </tr>
+        <tr>
+            <td>Address :</td>
+            <td>
+            <textarea name="add" rows="3" cols="22" onchange="return myadd()"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>City :</td>
+            <td>
+               <input type="text" name="city" onchange="return mycity()">
+            </td>
+        </tr>
+        <tr>
+            <td>Mobile No :</td>
+            <td>
+                <input type="text" name="no"  maxlength="10" onchange="return myno()">
+            </td>           
+        </tr>
+        <tr>
+            <td>E-mail :</td>
+            <td>
+              <input type="email" name="email" >
+            </td>            
+        </tr>
+        <tr>
+            <td>Security Que :</td>
+            <td>
+<select name="squestion" >
+  <option value="what is your favourite author?">what is your favourite author?</option>
+  <option value="what is your favourite song?">what is your favourite song?</option>
+  <option value="Name the place where you born?"> Name the place where you born?</option>
+</select>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>Security Ans :</td>
+            <td>
+               <input type="text" name="sanswer" >
+            </td>          
+        </tr>
+        <tr>
+            <td>Status :</td>
+            <td>
+<select name="status" >
+  <option value="YES">YES</option>
+  <option value="NO">NO</option>
+</select>             
+            </td>
+            <td>  &nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>         
+            <td>  &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="3"; align="center" style="margin-left: 40px">
+                <input type="submit" value="Submit" onclick="return myfun()" >
+                &nbsp;    
+                <input type="reset">
+            </td>
+        </tr>
+    </table>
+    </center>
+<?php
+$conn=mysqli_connect('localhost','root','','rto');
+if(!$conn)
+{
+echo"not conn to sever";
+}
+if(!mysqli_select_db($conn,'rto'))
+{
+echo"not selected database";
+}
+$admin=mysqli_real_escape_string($conn,$_POST['aname']);
+$rid=mysqli_real_escape_string($conn,$_POST['rid']);
+$fname=mysqli_real_escape_string($conn,$_POST['fname']);
+$lname=mysqli_real_escape_string($conn,$_POST['lname']);
+$add=mysqli_real_escape_string($conn,$_POST['add']);
+$city=mysqli_real_escape_string($conn,$_POST['city']);
+$no=mysqli_real_escape_string($conn,$_POST['no']);
+$email=mysqli_real_escape_string($conn,$_POST['email']);
+$squestion=mysqli_real_escape_string($conn,$_POST['squestion']);
+$sans=mysqli_real_escape_string($conn,$_POST['sanswer']);
+$status=mysqli_real_escape_string($conn,$_POST['status']);
+$pwd=mysqli_real_escape_string($conn,$_POST['pass']);
+//echo $user;
+//echo $rid;
+//echo $fname;
+//echo $lname;
+//echo $add;
+//echo $city;
+//echo $no;
+//echo $email;
+//echo $squestion;
+//echo $sans;
+//echo $status;
+//echo $pwd;
+//$check = "select * from userlogin where uname='$user' ";
+	//$resultcheck = mysqli_query($conn,$check);	
+
+	 //$row = mysqli_num_rows($resultcheck);
+			//if($row == 1){
+//echo "this user already exist";
+//header("refresh:1; url=userreg.html");
+//}
+//else{
+$q = "INSERT INTO adminlogin VALUES ('$admin', '$rid' , '$fname' , '$lname' , '$add' ,'$city','$no','$email','$squestion','$sans','$status','$pwd')";
+//$q = "INSERT INTO userlogin (uname,rid,fname,lname,add,city,no,email,squestion,sanswer,status,pass) VALUES ('$user', '$rid' , '$fname' , '$lname' , '$add' ,'$city','$no','$email','$squestion','$sans','$status','$pwd');";
+$result = mysqli_query($conn,$q);
+
+//echo"<script> alert(".mysqli_error($conn).");</script>";
+
+//if(!$result)
+//{
+//echo"not inserted";
+//}
+//else
+//{
+//echo"inserted";
+//}
+//}
+//header("refresh:0.1");
+?>
+
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 990px; height: 60px" colspan="2" align="center">
+                <center>
+
+                <b>
+                <a href="Logout.php">Logout</a> <br />
+                </b>
+                </center>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+</center>
+    </form>
+</body>
+</html>

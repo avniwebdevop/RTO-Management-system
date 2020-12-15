@@ -1,0 +1,109 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<?php
+session_start();
+error_reporting(0);
+
+?>
+<head >
+    <title>E-RTO System</title>
+    </head>
+<body >
+    <form id="form1" action="" method="post">
+<center>
+    <div>
+        <table style="width: 990px" border="1px">
+            <tr>
+                <td style="width: 990; height: 150px" colspan="2">
+                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+                        width="990" height="150">
+                        <param name="movie" value="flash1.swf" />
+                        <param name="quality" value="high" />
+                        <param name="wmode" value="transparent">
+                        <embed src="flash1.swf" quality="high" type="application/x-shockwave-flash" wmode="transparent"
+                            width="990" height="150" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                    </object>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 30px" >
+                    &nbsp;
+                    
+                </td>
+                <td style="height: 30px" >
+                    <?php 
+            echo"<h2>Welcome &nbsp;   ".$_SESSION['uname']."</h2>";
+               ?></td>
+                
+            </tr>
+            <tr>
+                <td style="width: 200px; height: 400px" valign="top">
+                    <center>
+                        <h3>
+                            :: Menu ::</h3>
+                    </center>
+                    <ul>
+                        <li><a href="List_Admin_Master.html">Admin Info</a></li>
+                        <li><a href="List Registration.html">Registration</a></li>
+                        <li><a href="rto.html">RTO Test</a></li>
+                        <li><a href="List Contact_Us.html">Contact_Us Info</a></li>
+                        <li><a href="List Feedback.html">Feedback</a></li>
+                        
+                    </ul>
+                </td>
+                <td style="width: 790px; height: 400px" valign="top">
+                <center><h2>CONTACT_INFORMATION</h2>
+
+<br>
+<br>
+
+<?php include("connection.php");
+error_reporting(0);
+$query="SELECT * FROM contact";
+$result=mysqli_query($conn,$query)or die(mysqli_error($conn));
+echo"<br><br><table style='width:70%;  border:2px solid black; border-collapse:collapse'>";
+echo"<tr style='border:2px solid black; border-collapse:collapse'>
+<th style='border:2px solid black; border-collapse:collapse; background-color:#f1f1c1;'>&nbsp;Name&nbsp;</th>
+<th style='border:2px solid black; border-collapse:collapse; background-color:#f1f1c1;'>&nbsp;Email&nbsp;</th>
+<th style='border:2px solid black; border-collapse:collapse; background-color:#f1f1c1;'>&nbsp;Subject&nbsp;</th>
+<th style='border:2px solid black; border-collapse:collapse; background-color:#f1f1c1;'>&nbsp;Message&nbsp;</th>
+</tr>";
+
+while($row=mysqli_fetch_array($result))
+{
+echo"<tr style='border:2px solid black; border-collapse:collapse'>
+<th style='border:2px solid black; border-collapse:collapse'>&nbsp;".$row[0]."&nbsp;</th>
+<th style='border:2px solid black; border-collapse:collapse'>&nbsp;".$row[1]."&nbsp;</th>
+<th style='border:2px solid black; border-collapse:collapse'>&nbsp;".$row[2]."&nbsp;</th>
+<th style='border:2px solid black; border-collapse:collapse'>&nbsp;".$row[3]."&nbsp;</th>
+</tr>";
+}
+echo"</table>"; 
+?>
+
+
+
+
+                
+
+
+</td>
+            </tr>
+            <tr>
+                <td style="width: 990px; height: 60px" colspan="2" align="center">
+                <center>
+
+<b>
+                <a href="Logout.php">Logout</a> <br />
+                </b>
+                </center>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+</center>
+    </form>
+</body>
+</html>

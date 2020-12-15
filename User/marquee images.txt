@@ -1,0 +1,21 @@
+<marquee behaviour="scroll" direction="up">   <img src="../Traffic_img/1_5.png" height="100px" width="150px" />&nbsp;</marquee>
+        	<marquee behaviour="scroll" direction="up">   <img src="../Traffic_img/1_6.png" height="100px" width="150px" />&nbsp;</marquee>
+        	<marquee behaviour="scroll" direction="up">   <img src="../Traffic_img/2_1.png" height="100px" width="150px" />&nbsp;</marquee>
+        	<marquee behaviour="scroll" direction="up">   <img src="../Traffic_img/2_2.png" height="100px" width="150px" />&nbsp;</marquee>
+        	<marquee behaviour="scroll" direction="up">   <img src="../Traffic_img/2_3.png" height="100px" width="150px" />&nbsp;</marquee>
+        	<marquee behaviour="scroll" direction="up">   <img src="../Traffic_img/2_4.png" height="100px" width="150px" />&nbsp;</marquee>
+
+<marquee behavior="scroll" direction="up">
+        	<img src="../Traffic_img/1_1.png" height="100px" width="150px" /></marquee>
+<marquee behaviour="scroll" direction="up" vsapce="10px">
+        	<img src="../Traffic_img/1_2.png" height="100px" width="150px" /></marquee>
+<marquee behaviour="scroll" direction="up" hspace="10px">
+        	<img src="../Traffic_img/1_3.png" height="100px" width="150px" /></marquee>
+<marquee behaviour="scroll" direction="up">
+        	<img src="../Traffic_img/1_4.png" height="100px" width="150px" />  </marquee> 
+<marquee behaviour="scroll" direction="up">    	
+        	<img src="../Traffic_img/1_5.png" height="100px" width="150px" /></marquee>
+        	<marquee behaviour="scroll" direction="up">   <img src="../Traffic_img/2_5.png" height="100px" width="150px" />&nbsp;</marquee>
+        	<marquee behaviour="scroll" direction="up">   <img src="../Traffic_img/2_6.png" height="100px" width="150px" /></marquee>
+        	
+        	</marquee>

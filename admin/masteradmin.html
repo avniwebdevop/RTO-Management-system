@@ -1,0 +1,90 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<?php
+session_start();
+error_reporting(0);
+?>
+<head >
+    <title>E-RTO System</title>
+    </head>
+<body >
+    <form id="form1" action="" method="post">
+<center>
+    <div>
+        <table style="width: 990px" border="1px">
+            <tr>
+                <td style="width: 990; height: 150px" colspan="2">
+                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+                        width="990" height="150">
+                        <param name="movie" value="flash1.swf" />
+                        <param name="quality" value="high" />
+                        <param name="wmode" value="transparent">
+                        <embed src="flash1.swf" quality="high" type="application/x-shockwave-flash" wmode="transparent"
+                            width="990" height="150" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+                    </object>
+                </td>
+            </tr>
+            <tr>
+                <td style="height: 30px" >
+                    &nbsp;
+                    
+                </td>
+                <td style="height: 30px" >
+                    <?php 
+            echo"<h2>Welcome &nbsp;   ".$_SESSION['aname']."</h2>";
+               ?></td>
+                
+            </tr>
+            <tr>
+                <td style="width: 200px; height: 400px" valign="top">
+                    <center>
+                        <h3>
+                            :: Menu ::</h3>
+                    </center>
+                    <ul>
+                        <li><a href="List_Admin_Master.html">Admin Info</a></li>
+                        <li><a href="List Registration.html">Registration</a></li>
+                        <li><a href="rto.html">RTO Test</a></li>
+                        <li><a href="List Contact_Us.html">Contact_Us Info</a></li>
+                        <li><a href="List Feedback.html">Feedback</a></li>
+                        
+                    </ul>
+                </td>
+                <td style="width: 790px; height: 400px" valign="top">
+                <center>
+
+<br>
+<br>
+<p align="justify">
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  The official website of Regional Transport Office, <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Coimbatore North. This Website provides information with regard to the transport <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  department. It provides you&nbsp; with online downloadable application forms. In <br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  keeping pace with the changing trend in information technology and for the more is<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  convenience of the public this website has been developed.&nbsp;<br>
+     </p>  
+
+
+  
+                
+
+
+</td>
+            </tr>
+            <tr>
+                <td style="width: 990px; height: 60px" colspan="2" align="center">
+                <center>
+
+<b>
+                <a href="Logout.php">Logout</a> <br />
+                </b>
+                </center>
+                
+                </td>
+            </tr>
+        </table>
+    </div>
+</center>
+    </form>
+</body>
+</html>
